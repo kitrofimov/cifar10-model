@@ -63,6 +63,6 @@ test_dataset = tv.datasets.CIFAR10(
 wrapper.prepare_dataloaders(train_dataset, test_dataset)
 wrapper.init_optim(optimizer=args.optimizer)
 history = wrapper.train(args.epochs, args.test_every, args.patience)
-history.to_csv(args.path / 'history.csv')
-print(f'Done! Model checkpoints and history.csv file are in {str(Path(path))} directory.\
-      The names of checkpoints are following the pattern EPOCH_TESTLOSS_TESTACCURACY')
+history.to_csv(path / 'history.csv')
+print(f'Done! Model checkpoints and history.csv file are in {str(Path(path))} directory. \
+The names of checkpoints are following the pattern EPOCH_TESTLOSS_TESTACCURACY')
