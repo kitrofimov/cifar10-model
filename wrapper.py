@@ -1,10 +1,9 @@
 import torch
 from torch import nn
 import torchvision as tv
-from torchvision import transforms
 from torchmetrics import Accuracy
 import pandas as pd
-from typing import Literal, Union
+from typing import Literal
 from pathlib import Path
 from tqdm import tqdm
 
@@ -53,7 +52,7 @@ class ClassificationModelWrapper:
             train the model. PATIENCE - early stopping parameter
     '''
 
-    def __init__(self, NAME: str=None, PATH: Union[str, Path]=None, LR: float=1e-3, WEIGHT_DECAY: float=1e-4):
+    def __init__(self, NAME: str=None, PATH: str|Path=None, LR: float=1e-3, WEIGHT_DECAY: float=1e-4):
         '''
         Initialize necessary hyperparameters
 
@@ -74,7 +73,7 @@ class ClassificationModelWrapper:
 
     def load_model(self, num_classes: int,
                    model: Literal['efficientnet_b0', 'alexnet', 'vgg11', 'vgg11_bn']='efficientnet_b0',
-                   checkpoint: Union[Path, str]=None):
+                   checkpoint: Path|str=None):
         '''
         Load a pre-trained model from torchvision.models. If you want to build your own architecture \
         - you can just set your model to self.model attribute.

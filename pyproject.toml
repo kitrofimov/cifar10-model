@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "fine-tuning-scripts"
+version = "0.1.1"
+description = "Scripts I used to fine-tune model on CIFAR-10 dataset. You can use ClassificationModelWrapper class (and its docs) from wrapper.py to customize the behaviour (for example, change the dataset or model to fine-tune (or build your architecture completely from scratch))"
+authors = ["fahlerile"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "fine_tuning_scripts"}]
+
+[tool.poetry.dependencies]
+python = "^3.11.3"
+torch = "^2.0.1"
+torchvision = "^0.15.2"
+torchmetrics = "^0.11.4"
+pandas = "^2.0.2"
+pathlib = "^1.0.1"
+tqdm = "^4.65.0"
+argparse = "^1.4.0"
+onnx = "^1.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

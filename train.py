@@ -6,7 +6,7 @@ from pathlib import Path
 import argparse
 
 parser = argparse.ArgumentParser(prog='train.py',
-                                 description='Train a CIFAR-10 model')
+                                 description='Train a CNN model using CIFAR-10 dataset (https://www.cs.toronto.edu/~kriz/cifar.html)')
 parser.add_argument('--name', type=str, help='name of your model experiment')
 parser.add_argument('--path', default=None, type=Path, help="a path to save your model's checkpoints and history.csv file")
 parser.add_argument('--batch_size', default=32, type=int, help="a batch size for DataLoaders")
@@ -14,7 +14,7 @@ parser.add_argument('--learning_rate', default=1e-4, type=float, help='learning 
                                                                        then increase it. if the model cannot converge (make loss small), try lowering it')
 parser.add_argument('--weight_decay', default=1e-4, type=float, help='L2 regularization parameter, high values try to reduce overfitting')
 parser.add_argument('--model', default='efficientnet_b0', type=str, help='the model architecture that you want to train. you can choose\
-                                                                          between efficientnet_b0, alexnet, vgg11 and vgg11_bn')
+                                                                          between efficientnet_b0, alexnet, vgg11 and vgg11_bn (https://pytorch.org/vision/stable/models.html)')
 parser.add_argument('--dataset_root', default=Path('./CIFAR-10'), type=Path, help='where to download the dataset')
 parser.add_argument('--optimizer', default='SGD', type=str, help='optimizer to train the network. you can choose between Adam and SGD')
 parser.add_argument('--epochs', default=50, type=int, help='number of epochs to train. low value can lead to underfitting, high value can lead to\
