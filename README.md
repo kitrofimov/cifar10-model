@@ -1,20 +1,18 @@
 # CIFAR-10 model
 
-## Description
-
-Just a bunch of code I used to fine-tune models from `torchvision`. I am not quite sure if every kind of model architecture is working as I expected, so if you find some bugs, I would highly appreciate if you tell me.
+Scripts to fine-tune torchvision.models on CIFAR-10 dataset. Please, submit an issue or pull request if you find a bug!
 
 ## Usage:
 Train a model:
-```
-git clone https://github.com/fahlerile/cifar10-model.git
+```bash
+git clone https://github.com/kitrofimov/cifar10-model.git
 cd cifar10-model
 poetry install
 poetry run python train.py [ARGS]
 ```
 
 **_Sample_** code to predict using your model:
-```
+```py
 model = tv.models.efficientnet_b0()
 model.load_state_dict(torch.load(PATH_TO_PTH_FILE, map_location=device))
 prediction = model(X)
